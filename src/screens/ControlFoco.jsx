@@ -54,7 +54,7 @@ const ControlFoco = () => {
 
   useEffect(() => {
     fetchStatus();
-    pollingRef.current = setInterval(fetchStatus, 2000);
+    pollingRef.current = setInterval(fetchStatus, 7000);
     return () => {
       if (pollingRef.current){
         clearInterval(pollingRef.current);

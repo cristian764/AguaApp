@@ -26,6 +26,8 @@ const Tanque = () => {
   const [nuevaAltura, setNuevaAltura] = useState('');
   const [nuevoRadio, setNuevoRadio] = useState('');
 
+  const pollingRef = useRef(null);
+
   const API_BASE_URL = `http://${esp32Ip}:8080`;
 
   const fetchStatus = () => {
@@ -95,13 +97,18 @@ const Tanque = () => {
   useEffect(() => {
     fetchStatus();
     fetchNivelAgua();
-    const interval = setInterval(() => {
+
+    pollingRef.current = setInterval(() => {
       fetchStatus();
       fetchNivelAgua();
-    }, 3000);
+    }, 7000); 
 
-    return () => clearInterval(interval);
-  }, [altura]);
+    return () => {
+      if (pollingRef.current) {
+        clearInterval(pollingRef.current);
+      }
+    };
+  }, [altura, radio]);
 
   const volumenLitros = Math.PI * Math.pow(radio, 2) * (nivelAgua || 0) / 1000;
 
