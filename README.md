@@ -10,16 +10,18 @@ Esta es una app donde se visualiza y controla el flujo y uso de aguas grises, di
 - **Ramírez Flores Kevin**
 
 ## Instalación de dependencias
--npm install -g expo-cli
--expo install @react-navigation/native
--expo install @react-navigation/stack
--expo install react-native-screens
--expo install react-native-safe-area-context
--expo install react-native-gesture-handler
--expo install react-native-reanimated
--expo install react-native-svg
--expo install expo-secure-store
--expo install expo-network
+npm install -g expo-cli
+expo install
+expo install @react-navigation/native
+expo install @react-navigation/stack
+expo install react-native-screens
+expo install react-native-safe-area-context
+expo install react-native-gesture-handler
+expo install react-native-reanimated
+expo install react-native-svg
+expo install expo-secure-store
+expo install expo-network
+
 
 ## Dependencias
 
