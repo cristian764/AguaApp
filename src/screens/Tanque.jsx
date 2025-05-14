@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useRef } from 'react';
 import { View, Text, Image, TouchableOpacity, Modal, TextInput, Alert } from 'react-native';
 import globalStyles from '../style/GlobalStyles';
 import { ESP32IpContext } from '../context/ESP32IpContext';
